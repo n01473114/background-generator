@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+
+    /* Custom properties (variables) */
+    
+    /*
+    to set "--main-variable: value;"
+    to get "var(--main-variable);"
+    */
+}
+
+html {
+    font-size: 16px;    /* rem value */
+}
+
+body {
+    /* base */
+    display: grid;
+    height: 100vh;
+    place-items: stretch;
+
+
+    /* custom grid */
+    grid-gap: 0.5rem;
+    grid-template-columns: 1fr; /* ← add columns as needed */
+    grid-template-rows:
+    minmax(min-content, auto)   /* header */
+    auto
+    1fr                         /* ← add rows as needed */
+    minmax(min-content, auto);  /* footer */ 
+    grid-template-areas: /* ↓ add columns and rows as needed (in perfect square) */
+    "h"
+    "🩹"
+    "a"
+    "f";
+    
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: rgb(224,224,224);
+
+}
+
+img,
+object,
+embed {
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+ul {
+	list-style-type: none;
+	padding-inline-start: 0;
+}
+
+ul.ul {
+	list-style-type: disc;
+	padding-inline-start: 40px;
+}
+
+header {
+    justify-self: center;
+    align-self: start;
+}
+
+.customHeader {
+    grid-area: h;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: whitesmoke;
+    border-radius: 0px 0px 1rem 1rem;
+}
+
+footer {
+    justify-self: center;
+    align-self: end;
+}
+
+.customFooter{
+    grid-area: f;
+    padding: 0 0 1rem 0;
+}
+
+.defaultText {
+    grid-area: 🩹;
+
+    margin: 1rem 0 1rem 0;
+    padding: 1rem 5rem 1rem 5rem;
+    background-color: white;
+}
+
+.titleElements {
+    margin: 0rem 1rem .3rem 1rem;
+    text-align: center;
+}
+
+.buttonContainer {
+    grid-area: a;
+    justify-self: center;
+    align-self: center;
+}
+
+.generatorButton {
+    background-color: rgba(255,255,255,0.5);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+
+    font-size: 1.5rem;
+    font-weight:600;
+}
+
+.generatorButton:active {
+    filter: invert(75%);
+}
+
+.outputBox {
+    background-color: rgba(255,255,255,0.5);
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
